@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES6"
+  },
+  "files": [
+    "packages/meteor-canvas/lib/measureText.js",
+    "packages/meteor-canvas/lib/requestRender.js",
+    "packages/meteor-canvas/lib/getDevicePixelRatio.js",
+    "packages/meteor-canvas/lib/Rect.js",
+    "packages/meteor-canvas/lib/zSort.js",
+    "packages/meteor-canvas/lib/Buffer2d.js",
+    "packages/meteor-canvas/lib/CanvasComponent.js",
+    "packages/meteor-canvas/lib/MouseInputManager.js",
+
+    "packages/meteor-canvas/mixins/BorderMixin.js",
+    "packages/meteor-canvas/mixins/MouseInputMixin.js",
+
+    "packages/meteor-canvas/components/TextField.js",
+    "packages/meteor-canvas/components/Image.js",
+    "packages/meteor-canvas/components/Layer.js",
+    "packages/meteor-canvas/components/Group.js",
+
+    "packages/meteor-canvas/meteor-canvas.js"
+  ]
+}

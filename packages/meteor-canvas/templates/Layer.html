@@ -1,0 +1,11 @@
+<!-- To be used by the Layer component. -->
+<template name="Layer">
+  <canvas
+    id="{{id}}"
+    class="{{className}}"
+    width="{{ width }}"
+    height="{{ height }}"
+    data-component="{{ componentName }}">
+      {{> Template.contentBlock this}}
+  </canvas>
+</template>

@@ -1,0 +1,28 @@
+<head>
+  <title>meteor-canvas</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{#Layer width=500 height=500 id="main"}}
+    {{#Group backgroundStyle="black"}}
+      {{> TextField
+        text="Hello World"
+        fontSize="24px"
+        lineHeight="18px"
+        padding=6
+        borderThickness=1
+        backgroundStyle="red"
+      }}
+
+      {{> Image
+        src="http://www.mariowiki.com/images/2/2f/Mario_Jumping_NSMB2.png"
+        y=30
+        width=300
+        height=300
+        backgroundStyle="blue"
+      }}
+    {{/Group}}
+  {{/Layer}}
+</body>
