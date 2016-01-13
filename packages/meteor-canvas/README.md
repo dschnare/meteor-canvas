@@ -1,6 +1,6 @@
 # Overview
 
-Meteor Canvas is a set of [meteor-components]((https://atmospherejs.com/dschnare/meteor-components)) built using that render to an HTML5 canvas.
+Meteor Canvas is a set of [meteor-components](https://atmospherejs.com/dschnare/meteor-components) built using that render to an HTML5 canvas.
 
 
 # Quick Start
