@@ -1,3 +1,10 @@
+# 0.0.31
+
+**Jan. 13, 2016**
+
+fix(package.js) Fix dependency name in tests
+
+
 # 0.0.3
 
 **Jan. 13, 2016**
