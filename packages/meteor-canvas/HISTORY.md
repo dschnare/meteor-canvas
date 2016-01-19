@@ -1,3 +1,19 @@
+# 0.1.2
+
+**Jan. 19, 2016**
+
+chore(TouchInputManager) Conditionally add touch events if touch is supported
+
+
+# 0.1.1
+
+**Jan. 19, 2016**
+
+fix(package.js) Add missing dependencies
+
+Add the missing TouchInputMixin and TouchInputManager dependencies.
+
+
 # 0.1.0
 
 **Jan. 19, 2016**

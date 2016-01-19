@@ -1,7 +1,7 @@
 /*global Package*/
 Package.describe({
   name: 'dschnare:meteor-canvas',
-  version: '0.1.0',
+  version: '0.1.2',
   // Brief, one-line summary of the package.
   summary: 'A set of meteor-components that render to an HTML5 canvas',
   // URL to the Git repository containing the source code for this package.
@@ -26,12 +26,14 @@ Package.onUse(function(api) {
     'lib/CanvasComponent.js',
     'lib/Buffer2d.js',
     'lib/MouseInputManager.js',
+    'lib/TouchInputManager.js',
 // templates
     'templates/Layer.html',
     'templates/CanvasComponent.html',
 // mixins
     'mixins/BorderMixin.js',
     'mixins/MouseInputMixin.js',
+    'mixins/TouchInputMixin.js',
 // exports
     'meteor-canvas.js',
 // components

@@ -1,4 +1,9 @@
 /*global TouchInputManager*/
+
+function hasTouchSupport() {
+  return 'ontouchstart' in document.documentElement;
+}
+
 // Singleton that handles interfacing with touch.
 TouchInputManager = class {
   static instance() {
@@ -16,27 +21,43 @@ TouchInputManager = class {
   }
 
   touchstart(listener) {
-    let listeners = this.getListeners('touchstart');
-    listeners.push(listener);
-    return this.createHandle(listener, listeners);
+    if (hasTouchSupport()) {
+      let listeners = this.getListeners('touchstart');
+      listeners.push(listener);
+      return this.createHandle(listener, listeners);
+    } else {
+      return { destroy: () => {} }
+    }
   }
 
   touchmove(listener) {
-    let listeners = this.getListeners('touchmove');
-    listeners.push(listener);
-    return this.createHandle(listener, listeners);
+    if (hasTouchSupport()) {
+      let listeners = this.getListeners('touchmove');
+      listeners.push(listener);
+      return this.createHandle(listener, listeners);
+    } else {
+      return { destroy: () => {} };
+    }
   }
 
   touchend(listener) {
-    let listeners = this.getListeners('touchend');
-    listeners.push(listener);
-    return this.createHandle(listener, listeners);
+    if (hasTouchSupport()) {
+      let listeners = this.getListeners('touchend');
+      listeners.push(listener);
+      return this.createHandle(listener, listeners);
+    } else {
+      return { destroy: () => {} };
+    }
   }
 
   touchcanel(listener) {
-    let listeners = this.getListeners('touchcanel');
-    listeners.push(listener);
-    return this.createHandle(listener, listeners);
+    if (hasTouchSupport()) {
+      let listeners = this.getListeners('touchcanel');
+      listeners.push(listener);
+      return this.createHandle(listener, listeners);
+    } else {
+      return { destroy: () => {} };
+    }
   }
 
   getListeners(eventType) {
