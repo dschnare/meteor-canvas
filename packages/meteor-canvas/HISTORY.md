@@ -1,3 +1,14 @@
+# 0.1.0
+
+**Jan. 19, 2016**
+
+feat(TouchInputMixin) Add TouchInputMixin
+
+Add TouchInputMixin and accompanying TouchInputManager. This mixin will
+call touchstart(), touchmove(), touchend() and touchcancel() if they exist
+on a component and a user has touched the component's area on the screen.
+
+
 # 0.0.32
 
 **Jan. 13, 2016**

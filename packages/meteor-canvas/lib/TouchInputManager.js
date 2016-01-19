@@ -1,28 +1,40 @@
-/*global MouseInputManager*/
-// Singleton that handles interfacing with the mouse.
-MouseInputManager = class {
+/*global TouchInputManager*/
+// Singleton that handles interfacing with touch.
+TouchInputManager = class {
   static instance() {
-    return this._instance || (this._instance = new MouseInputManager());
+    return this._instance || (this._instance = new TouchInputManager());
   }
 
   constructor(el=null) {
-    if (MouseInputManager._instance) {
-      throw new Error('MouseManager is a singleton.'
-        + ' Use MouseManager.instance().');
+    if (TouchInputManager._instance) {
+      throw new Error('TouchInputManager is a singleton.'
+        + ' Use TouchInputManager.instance().');
     }
 
     this.listeners = {};
     this.el = el || document.body;
   }
 
-  click(listener) {
-    let listeners = this.getListeners('click');
+  touchstart(listener) {
+    let listeners = this.getListeners('touchstart');
     listeners.push(listener);
     return this.createHandle(listener, listeners);
   }
 
-  mousemove(listener) {
-    let listeners = this.getListeners('mousemove');
+  touchmove(listener) {
+    let listeners = this.getListeners('touchmove');
+    listeners.push(listener);
+    return this.createHandle(listener, listeners);
+  }
+
+  touchend(listener) {
+    let listeners = this.getListeners('touchend');
+    listeners.push(listener);
+    return this.createHandle(listener, listeners);
+  }
+
+  touchcanel(listener) {
+    let listeners = this.getListeners('touchcanel');
     listeners.push(listener);
     return this.createHandle(listener, listeners);
   }

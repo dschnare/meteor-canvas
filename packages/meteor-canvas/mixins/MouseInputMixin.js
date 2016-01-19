@@ -16,7 +16,7 @@ MouseInputMixin = class {
           if (this.owner) {
             let mp = this.getMousePosition(event);
             if (this.owner.extent.containsPoint(mp)) {
-              this.owner.click();
+              this.owner.click(event);
             }
           }
         })
@@ -33,10 +33,10 @@ MouseInputMixin = class {
 
             if (!this._over && isOver) {
               this._over = true;
-              if (this.owner.rollOver) this.owner.rollOver();
+              if (this.owner.rollOver) this.owner.rollOver(event);
             } else if (this._over && !isOver) {
               this._over = false;
-              if (this.owner.rollOut) this.owner.rollOut();
+              if (this.owner.rollOut) this.owner.rollOut(event);
             }
           }
         })

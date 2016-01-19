@@ -64,7 +64,7 @@ BorderMixin = class {
       buffer.save();
       buffer.ctx.lineWidth = this.thickness;
       buffer.ctx.strokeStyle = this.strokeStyle;
-// NOTE (Darren): When drawing lines we have to strddle the pixels in order for
+// NOTE (Darren): When drawing lines we have to straddle the pixels in order for
 // our lines not to be blurry.
 // See: http://diveintohtml5.info/canvas.html
 //
