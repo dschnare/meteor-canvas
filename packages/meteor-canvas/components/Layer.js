@@ -8,12 +8,15 @@
 Component.Layer = class {
   constructor() {
     this.destroyed = false;
+    this.viewport = new Rect();
   }
 
   ready() {
     this.buffer = new Buffer2d(this.find('canvas'));
     this.autorun(() => {
-      this.buffer.upscale(this.data('width'), this.data('height'));
+      this.viewport.width = this.data('width');
+      this.viewport.height = this.data('height');
+      this.buffer.upscale(this.viewport.width, this.viewport.height);
     });
 // Request the first render
     MeteorCanvas.requestRender(() => this.render());
@@ -34,7 +37,11 @@ Component.Layer = class {
       sortedChildren.sort(zSort);
 
       for (let child of sortedChildren) {
-        child.render(buffer);
+        child.measure();
+// Only render children that are within the bounds of the canvas
+        if (this.viewport.intersects(child.extent)) {
+          child.render(buffer);
+        }
       }
 
       buffer.restore();

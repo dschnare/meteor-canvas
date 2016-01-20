@@ -19,6 +19,7 @@
     "packages/meteor-canvas/components/Image.js",
     "packages/meteor-canvas/components/Layer.js",
     "packages/meteor-canvas/components/Group.js",
+    "packages/meteor-canvas/components/ClippingGroup.js",
 
     "packages/meteor-canvas/meteor-canvas.js"
   ]

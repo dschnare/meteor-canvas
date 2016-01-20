@@ -20,6 +20,11 @@ Component.Group = class extends CanvasComponent {
   }
 
   measure() {
+// Measure our children first.
+    for (let child of this.children) {
+      child.measure();
+    }
+
     let {width, height} = this.size();
 // Always set the width and height to match the size of our content.
     this.width = width + (this.padding * 2);

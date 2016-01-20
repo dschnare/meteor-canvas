@@ -65,6 +65,13 @@ Rect = class {
     return ex;
   }
 
+  intersects(rect) {
+    return !(this.right < rect.left ||
+      this.left > rect.right||
+      this.top > rect.bottom ||
+      this.bottom < rect.top);
+  }
+
   // Create a copy of this rect.
   copy() {
     return new Rect(this.x, this.y, this.width, this.height);

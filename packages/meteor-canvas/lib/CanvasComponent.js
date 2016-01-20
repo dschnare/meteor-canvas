@@ -8,7 +8,7 @@ CanvasComponent = class {
   set x(value) {
     if (value !== this._x) {
       this._x = value;
-      this.dirty = true;
+      if (this.parent) this.parent.dirty = true;
     }
   }
 
@@ -16,7 +16,7 @@ CanvasComponent = class {
   set y(value) {
     if (value !== this._y) {
       this._y = value;
-      this.dirty = true;
+      if (this.parent) this.parent.dirty = true;
     }
   }
 
@@ -24,7 +24,7 @@ CanvasComponent = class {
   set z(value) {
     if (value !== this._z) {
       this._z = value;
-      this.dirty = true;
+      if (this.parent) this.parent.dirty = true;
     }
   }
 
@@ -50,7 +50,7 @@ CanvasComponent = class {
   set alpha(value) {
     if (value !== this._alpha) {
       this._alpha = value;
-      this.dirty = true;
+      if (this.parent) this.parent.dirty = true;
     }
   }
 
@@ -134,7 +134,14 @@ CanvasComponent = class {
     ];
   }
 
+  // Perform the measure phase before we render. This will get the size of the
+  // content to render and set the width and height properties if they have not
+  // been set so they reflect acurate values.
   measure() {
+    for (let child of this.children) {
+      child.measure();
+    }
+
     let {width, height} = this.size();
 // Set the width and height if they are not set
     if (!this._widthSet) this._width = width + (this.padding * 2);
@@ -142,11 +149,6 @@ CanvasComponent = class {
   }
 
   render(buffer) {
-// Perform the measure phase before we render. This will get the size of the
-// content to render and set the width and height properties if they have not
-// been set so they reflect acurate values.
-    this.measure();
-
 // Update the back buffer if we're dirty
     if (this.dirty) {
 // Measure ourselves and if our width and height are not set then we set them
@@ -164,7 +166,7 @@ CanvasComponent = class {
       this.renderChildren(this.buffer);
 // Render our mixins to the back buffer
       this.renderMixins(this.buffer);
-// Reset our dirty flag and restore the context
+// Reset our dirty flag
       this.dirty = false;
     }
 

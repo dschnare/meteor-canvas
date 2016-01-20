@@ -1,3 +1,16 @@
+# 0.1.3
+
+**Jan. 20, 2016**
+
+chore(CanvasComponent, Layer) Only render visible child components
+
+Only render child components that are contained within the bounds of the canvas
+being controlled by a Layer. Separate the measure phase from the render phase
+so that component measurements are calculated before render is called.
+
+Implement Rect#intersects to determine if two rectangles are intersecting.
+
+
 # 0.1.2
 
 **Jan. 19, 2016**
