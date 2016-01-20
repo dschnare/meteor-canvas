@@ -1,3 +1,13 @@
+# 0.2.0
+
+**Jan. 20, 2016**
+
+feat(ClippingGroup) Implement ClippingGroup component
+
+Implement ClippingGroup component that acts much like a Group component but
+must have the width and height set so that the children will be clipped.
+
+
 # 0.1.3
 
 **Jan. 20, 2016**

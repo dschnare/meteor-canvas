@@ -1,7 +1,7 @@
 /*global Package*/
 Package.describe({
   name: 'dschnare:meteor-canvas',
-  version: '0.1.3',
+  version: '0.2.0',
   // Brief, one-line summary of the package.
   summary: 'A set of meteor-components that render to an HTML5 canvas',
   // URL to the Git repository containing the source code for this package.
@@ -40,7 +40,8 @@ Package.onUse(function(api) {
     'components/Layer.js', // Layer uses MeteorCanvas.requestRender
     'components/TextField.js',
     'components/Image.js',
-    'components/Group.js'
+    'components/Group.js',
+    'components/ClippingGroup.js'
   ], 'client');
   api.export([
     'MeteorCanvas'
