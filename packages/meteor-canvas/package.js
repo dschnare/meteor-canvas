@@ -1,7 +1,7 @@
 /*global Package*/
 Package.describe({
   name: 'dschnare:meteor-canvas',
-  version: '0.2.0',
+  version: '0.3.0',
   // Brief, one-line summary of the package.
   summary: 'A set of meteor-components that render to an HTML5 canvas',
   // URL to the Git repository containing the source code for this package.
@@ -32,8 +32,8 @@ Package.onUse(function(api) {
     'templates/CanvasComponent.html',
 // mixins
     'mixins/BorderMixin.js',
-    'mixins/MouseInputMixin.js',
-    'mixins/TouchInputMixin.js',
+    'mixins/MouseableMixin.js',
+    'mixins/TouchableMixin.js',
 // exports
     'meteor-canvas.js',
 // components

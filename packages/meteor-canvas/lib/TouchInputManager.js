@@ -21,38 +21,24 @@ TouchInputManager = class {
   }
 
   touchstart(listener) {
-    if (hasTouchSupport()) {
-      let listeners = this.getListeners('touchstart');
-      listeners.push(listener);
-      return this.createHandle(listener, listeners);
-    } else {
-      return { destroy: () => {} }
-    }
+    return this.listen('touchstart', listener);
   }
 
   touchmove(listener) {
-    if (hasTouchSupport()) {
-      let listeners = this.getListeners('touchmove');
-      listeners.push(listener);
-      return this.createHandle(listener, listeners);
-    } else {
-      return { destroy: () => {} };
-    }
+    return this.listen('touchmove', listener);
   }
 
   touchend(listener) {
-    if (hasTouchSupport()) {
-      let listeners = this.getListeners('touchend');
-      listeners.push(listener);
-      return this.createHandle(listener, listeners);
-    } else {
-      return { destroy: () => {} };
-    }
+    return this.listen('touchend', listener);
   }
 
-  touchcanel(listener) {
+  touchcancel(listener) {
+    return this.listen('touchcancel', listener);
+  }
+
+  listen(eventType, listener) {
     if (hasTouchSupport()) {
-      let listeners = this.getListeners('touchcanel');
+      let listeners = this.getListeners(eventType);
       listeners.push(listener);
       return this.createHandle(listener, listeners);
     } else {

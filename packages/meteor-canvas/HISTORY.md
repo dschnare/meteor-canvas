@@ -1,3 +1,26 @@
+# 0.3.0
+
+**Jan. 22, 2016**
+
+refactor(mixins) Rename and clean up input mixins
+
+Rename TouchInputMixin to TouchableMixin and MouseInputMixin to MouseableMixin.
+Clean up redundant code in TouchInputManager and MouseInputManager.
+
+Export TouchableMixin and TouchInputManager and also register TouchableMixin
+and MousableMixin on ComponentRootIoc so they can be attached to components
+using attached properties.
+
+
+# 0.2.1
+
+**Jan. 20, 2016**
+
+fix(Group, ClippingGroup) Override dirty property properly
+
+Override the dirty property setter. This is required due to how classes work.
+
+
 # 0.2.0
 
 **Jan. 20, 2016**

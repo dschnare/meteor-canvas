@@ -11,9 +11,11 @@
     "packages/meteor-canvas/lib/Buffer2d.js",
     "packages/meteor-canvas/lib/CanvasComponent.js",
     "packages/meteor-canvas/lib/MouseInputManager.js",
+    "packages/meteor-canvas/lib/TouchInputManager.js",
 
     "packages/meteor-canvas/mixins/BorderMixin.js",
-    "packages/meteor-canvas/mixins/MouseInputMixin.js",
+    "packages/meteor-canvas/mixins/MouseableMixin.js",
+    "packages/meteor-canvas/mixins/TouchableMixin.js",
 
     "packages/meteor-canvas/components/TextField.js",
     "packages/meteor-canvas/components/Image.js",

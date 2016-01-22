@@ -5,10 +5,12 @@ MeteorCanvas = {
   CanvasComponent: CanvasComponent,
   Rect: Rect,
   MouseInputManager: MouseInputManager,
+  TouchInputManager: TouchInputManager,
   requestRender: requestRender,
 
   mixins: {
     BorderMixin: BorderMixin,
-    MouseInputMixin: MouseInputMixin
+    MouseableMixin: MouseableMixin,
+    TouchableMixin: TouchableMixin
   }
 };

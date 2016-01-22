@@ -16,13 +16,15 @@ MouseInputManager = class {
   }
 
   click(listener) {
-    let listeners = this.getListeners('click');
-    listeners.push(listener);
-    return this.createHandle(listener, listeners);
+    return this.listen('click', listener);
   }
 
   mousemove(listener) {
-    let listeners = this.getListeners('mousemove');
+    return this.listen('mousemove', listener);
+  }
+
+  listen(eventType, listener) {
+    let listeners = this.getListeners(eventType);
     listeners.push(listener);
     return this.createHandle(listener, listeners);
   }

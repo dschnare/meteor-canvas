@@ -1,8 +1,8 @@
-/*global MouseInputMixin*/
+/*global MouseableMixin, ComponentRootIoc*/
 // A mixin that will add the ability of a component to define a click, rollOver
 // or rollOut methods that will be called when clicked, the mouse rolls over or
 // rolls off of the component on the canvas element.
-MouseInputMixin = class {
+MouseableMixin = class {
   constructor() {
     this.subscriptions = [];
   }
@@ -62,3 +62,7 @@ MouseInputMixin = class {
     };
   }
 };
+
+// Register the MousableMixin so it can be attached via
+// attached properties on other components.
+ComponentRootIoc.service('MouseableMixin', MouseableMixin);

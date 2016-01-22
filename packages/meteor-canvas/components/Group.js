@@ -10,6 +10,9 @@ Component.Group = class extends CanvasComponent {
   get dirty() {
     return super.dirty || this.children.some((c) => c.dirty);
   }
+  set dirty(value) {
+    super.dirty = value;
+  }
 
   size() {
     let extent = new Rect();
