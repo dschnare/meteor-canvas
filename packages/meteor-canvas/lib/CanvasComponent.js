@@ -103,6 +103,29 @@ CanvasComponent = class {
     }
   }
 
+  // localToGlobal({x, y})
+  // localToGlobal(x, y)
+  localToGlobal(x, y) {
+    if (x && typeof x === 'object') {
+      y = x.y;
+      x = x.x;
+    }
+    // NOTE: We only permit translation operations
+    // so we just need to concern ourselves with x and y.
+    // If we were to permit scaling and rotating components
+    // then we would need each component maintain a local
+    // matrix transform and we would have to compose matrices
+    // up the entire hierarchy.
+    if (this.parent) {
+      return this.parent.localToGlobal({
+        x: this.x + x,
+        y: this.y + y
+      });
+    } else {
+      return { x: x, y: y };
+    }
+  }
+
   initialize() {
     this.dirty = true;
     this._extent = new Rect();

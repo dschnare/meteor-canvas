@@ -1,3 +1,12 @@
+# 0.3.1
+
+**Jan. 22, 2016**
+
+feat(localToGlobal) Add localToGlobal method to components
+
+Implement localToGlobal() method for all canvas components.
+
+
 # 0.3.0
 
 **Jan. 22, 2016**
