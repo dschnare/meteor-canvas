@@ -15,9 +15,9 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
   api.use('templating', 'client');
-  api.use('dschnare:meteor-components-ioc-plugin', 'client');
-  api.use('dschnare:meteor-components', 'client');
-  api.use('dschnare:ioc-container', 'client');
+  api.use('dschnare:meteor-components-ioc-plugin@0.5.0', 'client');
+  api.use('dschnare:meteor-components@0.12.0', 'client');
+  api.use('dschnare:ioc-container@1.2.1', 'client');
   api.addFiles([
 // support files
     'lib/zSort.js',
