@@ -192,7 +192,11 @@ CanvasComponent = class {
 // Reset our dirty flag
       this.dirty = false;
     }
+// Render to the buffer
+    this.blit(buffer);
+  }
 
+  blit(buffer) {
 // Save the context and set our position and alpha and blit the back buffer to
 // the screen. Alpha affects how the back buffer is composited so we have to
 // set the globalAlpha here.

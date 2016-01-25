@@ -1,7 +1,7 @@
 /*global Package*/
 Package.describe({
   name: 'dschnare:meteor-canvas',
-  version: '0.3.1',
+  version: '0.3.2',
   // Brief, one-line summary of the package.
   summary: 'A set of meteor-components that render to an HTML5 canvas',
   // URL to the Git repository containing the source code for this package.
@@ -15,7 +15,9 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
   api.use('templating', 'client');
-  api.use('dschnare:meteor-components@0.10.0', 'client');
+  api.use('dschnare:meteor-components-ioc-plugin', 'client');
+  api.use('dschnare:meteor-components', 'client');
+  api.use('dschnare:ioc-container', 'client');
   api.addFiles([
 // support files
     'lib/zSort.js',

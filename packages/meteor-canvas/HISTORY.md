@@ -1,3 +1,16 @@
+# 0.3.2
+
+**Jan. 25, 2016**
+
+chore(CanvasComponent) Split blitting phase into own method
+
+The blitting phase is now split into its own method. This will make it easier
+for mixins to potentially override how components are blitted to the canvas.
+
+Update dependencies so that IOC container and meteor-components is tracked
+properly.
+
+
 # 0.3.1
 
 **Jan. 22, 2016**
