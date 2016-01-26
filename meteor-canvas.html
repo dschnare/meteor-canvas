@@ -6,23 +6,23 @@
   <h1>Welcome to Meteor!</h1>
 
   {{#Layer width=500 height=500 id="main"}}
-    {{#Group backgroundStyle="black"}}
+    {{#HorizontalStack backgroundStyle="black" spacing=10}}
       {{> TextField
         text="Hello World"
         fontSize="24px"
         lineHeight="18px"
         padding=6
-        borderThickness=1
+        borderThickness=4
         backgroundStyle="red"
       }}
 
       {{> Image
         src="http://www.mariowiki.com/images/2/2f/Mario_Jumping_NSMB2.png"
-        y=30
         width=300
         height=300
         backgroundStyle="blue"
+        Mixin.Anchored="{'anchorX': 'global(10)'}"
       }}
-    {{/Group}}
+    {{/HorizontalStack}}
   {{/Layer}}
 </body>

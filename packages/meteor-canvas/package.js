@@ -1,7 +1,7 @@
 /*global Package*/
 Package.describe({
   name: 'dschnare:meteor-canvas',
-  version: '0.3.2',
+  version: '0.4.0',
   // Brief, one-line summary of the package.
   summary: 'A set of meteor-components that render to an HTML5 canvas',
   // URL to the Git repository containing the source code for this package.
@@ -15,7 +15,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
   api.use('templating', 'client');
-  api.use('dschnare:meteor-components-ioc-plugin@0.5.0', 'client');
+  api.use('dschnare:meteor-components-ioc-plugin@0.5.1', 'client');
   api.use('dschnare:meteor-components@0.12.0', 'client');
   api.use('dschnare:ioc-container@1.2.1', 'client');
   api.addFiles([
@@ -36,6 +36,7 @@ Package.onUse(function(api) {
     'mixins/BorderMixin.js',
     'mixins/MouseableMixin.js',
     'mixins/TouchableMixin.js',
+    'mixins/AnchoredMixin.js',
 // exports
     'meteor-canvas.js',
 // components
@@ -43,7 +44,9 @@ Package.onUse(function(api) {
     'components/TextField.js',
     'components/Image.js',
     'components/Group.js',
-    'components/ClippingGroup.js'
+    'components/ClippingGroup.js',
+    'components/HorizontalStack.js',
+    'components/VerticalStack.js'
   ], 'client');
   api.export([
     'MeteorCanvas'

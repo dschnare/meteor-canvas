@@ -9,6 +9,8 @@ Component.Layer = class {
   constructor() {
     this.destroyed = false;
     this.viewport = new Rect();
+// The root of a view hiearchy will have the parent point to itself.
+    this.parent = this;
   }
 
   ready() {
@@ -50,3 +52,6 @@ Component.Layer = class {
     }
   }
 }
+
+Component.Layer.prototype.localToGlobal = CanvasComponent.prototype.localToGlobal;
+Component.Layer.prototype.globalToLocal = CanvasComponent.prototype.globalToLocal;

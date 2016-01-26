@@ -1,3 +1,16 @@
+# 0.4.0
+
+**Jan. 26, 2016**
+
+feat(components, mixins) Add HorizontalStack, VerticalStack and AnchoredMixin
+
+Add HorizontalStack, VerticalStack and AnchoredMixin. The stack components will
+layout thier children either horizontally or vertically with an optional
+spacing. AnchoredMixin is a mixin that can be attached to a component using
+attached property syntax and the component can be anchored to a local position
+or a global position.
+
+
 # 0.3.2
 
 **Jan. 25, 2016**

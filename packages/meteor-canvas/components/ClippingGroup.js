@@ -8,11 +8,9 @@ Component.ClippingGroup = class extends CanvasComponent {
   static template() { return 'CanvasComponent'; }
 
   get dirty() {
-    return super.dirty || this.children.some((c) => c.dirty);
+    return this._dirty || this.children.some((c) => c.dirty);
   }
-  set dirty(value) {
-    super.dirty = value;
-  }
+  set dirty(value) { this._dirty = !!value; }
 
   renderChildren(buffer) {
     let extent = this.extent;

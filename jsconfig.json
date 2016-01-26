@@ -16,12 +16,15 @@
     "packages/meteor-canvas/mixins/BorderMixin.js",
     "packages/meteor-canvas/mixins/MouseableMixin.js",
     "packages/meteor-canvas/mixins/TouchableMixin.js",
+    "packages/meteor-canvas/mixins/AnchoredMixin.js",
 
     "packages/meteor-canvas/components/TextField.js",
     "packages/meteor-canvas/components/Image.js",
     "packages/meteor-canvas/components/Layer.js",
     "packages/meteor-canvas/components/Group.js",
     "packages/meteor-canvas/components/ClippingGroup.js",
+    "packages/meteor-canvas/components/HorizontalStack.js",
+    "packages/meteor-canvas/components/VerticalStack.js",
 
     "packages/meteor-canvas/meteor-canvas.js"
   ]
